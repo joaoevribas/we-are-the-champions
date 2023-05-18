@@ -3,3 +3,42 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #1b1924;
+}
+
+.container {
+  max-width: 390px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  width: 90px;
+  margin: 51px 0 17px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 25px;
+  line-height: 25px;
+  margin-bottom: 19px;
+}
+
+textarea {
+  font-family: "Inter", sans-serif;
+  width: 317px;
+  height: 118px;
+  border: none;
+  border-radius: 8px;
+  background-color: #444059;
+  color: #8f8f8f;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 12px 17px;
+  resize: none;
+}
