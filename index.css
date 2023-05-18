@@ -41,4 +41,21 @@ textarea {
   line-height: 18px;
   padding: 12px 17px;
   resize: none;
+  margin-bottom: 13px;
+}
+
+button {
+  font-family: inherit;
+  width: 317px;
+  height: 61px;
+  background-color: #28a9f1;
+  border: none;
+  border-radius: 8px;
+  color: #04131c;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+button:hover {
+  cursor: pointer;
 }
