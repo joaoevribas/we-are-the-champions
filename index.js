@@ -28,6 +28,7 @@ publishEl.addEventListener("click", function () {
   let inputValue = inputAreaEl.value;
 
   appendToEndorsements(inputValue);
+  clearInputAreaEl();
 });
 
 // FUNCTIONS
@@ -35,4 +36,8 @@ function appendToEndorsements(paragraph) {
   let newEl = document.createElement("p");
   newEl.textContent = inputAreaEl.value;
   endorsementsEl.append(newEl);
+}
+
+function clearInputAreaEl() {
+  inputAreaEl.value = "";
 }
