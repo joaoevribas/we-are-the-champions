@@ -17,3 +17,22 @@ const appSettings = {
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const endorsementsInDB = ref(database, "endorsements");
+
+// DOM
+const publishEl = document.getElementById("publish");
+const inputAreaEl = document.getElementById("inputArea");
+const endorsementsEl = document.getElementById("endorsements");
+
+// PUBLISH BUTTON
+publishEl.addEventListener("click", function () {
+  let inputValue = inputAreaEl.value;
+
+  appendToEndorsements(inputValue);
+});
+
+// FUNCTIONS
+function appendToEndorsements(paragraph) {
+  let newEl = document.createElement("p");
+  newEl.textContent = inputAreaEl.value;
+  endorsementsEl.append(newEl);
+}
