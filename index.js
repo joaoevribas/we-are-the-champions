@@ -27,9 +27,10 @@ const endorsementsEl = document.getElementById("endorsements");
 publishEl.addEventListener("click", function () {
   let inputValue = inputAreaEl.value;
 
-  push(endorsementsInDB, inputValue);
-
-  clearInputAreaEl();
+  if (inputValue.length > 0) {
+    push(endorsementsInDB, inputValue);
+    clearInputAreaEl();
+  }
 });
 
 // FUNCTIONS
