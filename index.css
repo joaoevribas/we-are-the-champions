@@ -41,7 +41,19 @@ textarea {
   line-height: 18px;
   padding: 12px 17px;
   resize: none;
-  margin-bottom: 13px;
+  margin-bottom: 9px;
+}
+
+input {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  width: 152.85px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #444059;
+  color: #8f8f8f;
 }
 
 button {
@@ -54,6 +66,7 @@ button {
   color: #04131c;
   font-size: 22px;
   font-weight: 700;
+  margin-top: 9px;
   margin-bottom: 28px;
 }
 

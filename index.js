@@ -22,6 +22,8 @@ const endorsementsInDB = ref(database, "endorsements");
 const publishEl = document.getElementById("publish");
 const inputAreaEl = document.getElementById("inputArea");
 const endorsementsEl = document.getElementById("endorsements");
+const inputFromEl = document.getElementById("input-from");
+const inputToEl = document.getElementById("input-to");
 
 // PUBLISH BUTTON
 publishEl.addEventListener("click", function () {
@@ -30,6 +32,8 @@ publishEl.addEventListener("click", function () {
   if (inputValue.length > 0) {
     push(endorsementsInDB, inputValue);
     clearInputAreaEl();
+  } else {
+    alert("Write something before using the Publish button");
   }
 });
 
