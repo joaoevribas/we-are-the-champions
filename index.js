@@ -27,17 +27,37 @@ const endorsementsEl = document.getElementById("endorsements");
 publishEl.addEventListener("click", function () {
   let inputValue = inputAreaEl.value;
 
-  appendToEndorsements(inputValue);
+  push(endorsementsInDB, inputValue);
+
   clearInputAreaEl();
 });
 
 // FUNCTIONS
-function appendToEndorsements(paragraph) {
+function appendToEndorsements(endorsements) {
+  let endorsementsID = endorsements[0];
+  let endorsementsValue = endorsements[1];
+
   let newEl = document.createElement("p");
-  newEl.textContent = inputAreaEl.value;
+  newEl.textContent = endorsementsValue;
   endorsementsEl.append(newEl);
 }
 
 function clearInputAreaEl() {
   inputAreaEl.value = "";
 }
+
+function clearEndorsementsEl() {
+  endorsementsEl.innerHTML = "";
+}
+
+// GET DATA FROM DB
+onValue(endorsementsInDB, function (snapchot) {
+  let endorsementsArray = Object.entries(snapchot.val());
+
+  clearEndorsementsEl();
+
+  for (let i = 0; i < endorsementsArray.length; i++) {
+    let currentEndorsement = endorsementsArray[i];
+    appendToEndorsements(currentEndorsement);
+  }
+});
