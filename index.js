@@ -40,6 +40,14 @@ function appendToEndorsements(endorsements) {
   let newEl = document.createElement("p");
   newEl.textContent = endorsementsValue;
   endorsementsEl.append(newEl);
+
+  newEl.addEventListener("click", function () {
+    let exactLocationOfEndorsementInDB = ref(
+      database,
+      `endorsements/${endorsementsID}`
+    );
+    remove(exactLocationOfEndorsementInDB);
+  });
 }
 
 function clearInputAreaEl() {
@@ -52,12 +60,16 @@ function clearEndorsementsEl() {
 
 // GET DATA FROM DB
 onValue(endorsementsInDB, function (snapchot) {
-  let endorsementsArray = Object.entries(snapchot.val());
+  if (snapchot.exists()) {
+    let endorsementsArray = Object.entries(snapchot.val());
 
-  clearEndorsementsEl();
+    clearEndorsementsEl();
 
-  for (let i = 0; i < endorsementsArray.length; i++) {
-    let currentEndorsement = endorsementsArray[i];
-    appendToEndorsements(currentEndorsement);
+    for (let i = 0; i < endorsementsArray.length; i++) {
+      let currentEndorsement = endorsementsArray[i];
+      appendToEndorsements(currentEndorsement);
+    }
+  } else {
+    clearEndorsementsEl();
   }
 });
